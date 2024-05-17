@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kasirqu/core/core.dart';
+import 'package:kasirqu/features/home/pages/main/main.dart';
 
 class SplasePage extends StatefulWidget {
   const SplasePage({super.key});
@@ -12,8 +13,8 @@ class _SplasePageState extends State<SplasePage> {
   @override
   void initState() {
     Future.delayed(Duration(seconds: 3)).then(
-      (value) =>
-          Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false),
+      (value) => Navigator.pushNamedAndRemoveUntil(
+          context, HomePage.routeName, (route) => false),
     );
     super.initState();
   }

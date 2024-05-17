@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       home: const SplasePage(),
       onGenerateRoute: (settings) {
         switch (settings.name) {
-          case '/homes':
+          case HomePage.routeName:
             return MaterialPageRoute(builder: (_) {
               return const HomePage();
             });
