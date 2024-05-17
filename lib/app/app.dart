@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kasirqu/core/extensions/extensions.dart';
-import 'package:kasirqu/core/preferences/preferences.dart';
-import 'package:kasirqu/features/home/home.dart';
-import 'package:kasirqu/features/settings/pages/pages.dart';
+import 'package:kasirqu/core/core.dart';
+import 'package:kasirqu/features/settings/settings.dart';
 
-import 'core/components/text/heading_text.dart';
-
-void main() {
-  runApp(const MyApp());
-}
+import '../features/home/pages/main/main.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -23,10 +17,12 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case '/homes':
-            return MaterialPageRoute(builder: (_) => const HomePage());
+            return MaterialPageRoute(builder: (_) {
+              return const HomePage();
+            });
           default:
             return MaterialPageRoute(builder: (_) {
-              return Center(child: Scaffold(body: Text('Page Not Found')));
+              return Scaffold(body: Center(child: Text('Page Not Found')));
             });
         }
       },
